@@ -1,0 +1,3 @@
+rootProject.name = 'apache-kafka-producer-consumer-api'
+include 'producer-api'
+include 'consumer-api'
