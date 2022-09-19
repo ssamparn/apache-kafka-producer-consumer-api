@@ -36,10 +36,14 @@ auto.create.topics.enable=false
 ./kafka-server-start.sh ../config/server.properties
 ```
 
-## Create a topic
+## Create test topic
 
 ```
 ./kafka-topics.sh --create --topic test-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4
+```
+## Create Item topic
+```
+./kafka-topics.sh --create --topic item-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4
 ```
 
 ## Create a topic with Replication Factor
