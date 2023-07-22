@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class MessageConsumerSeek {
-
     private static final Logger logger = LoggerFactory.getLogger(MessageConsumerSeek.class);
     private Map<TopicPartition, OffsetAndMetadata> offsetsMap = new HashMap<>();
 
@@ -76,7 +75,7 @@ public class MessageConsumerSeek {
         }
     }
 
-    private void writeOffsetsMapToPath(Map<TopicPartition, OffsetAndMetadata> offsetsMap) throws IOException {
+    private void writeOffsetsMapToPath(Map<TopicPartition, OffsetAndMetadata> offsetsMap) {
 
         try (FileOutputStream fout = new FileOutputStream(serialiaziedFilePath);
              ObjectOutputStream oos = new ObjectOutputStream(fout)) {

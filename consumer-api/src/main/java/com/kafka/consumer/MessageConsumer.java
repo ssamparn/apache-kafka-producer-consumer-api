@@ -21,14 +21,13 @@ public class MessageConsumer {
     private String topicName = "test-topic";
 
     public static void main(String[] args) {
-
         Map<String, Object> propsMap = buildConsumerProperties();
         MessageConsumer messageConsumer = new MessageConsumer(propsMap);
         messageConsumer.pollKafka();
     }
 
     public  MessageConsumer(Map<String, Object> propsMap){
-        kafkaConsumer = new KafkaConsumer<String, String>(propsMap);
+        kafkaConsumer = new KafkaConsumer<>(propsMap);
     }
 
     public static Map<String, Object> buildConsumerProperties() {
@@ -66,5 +65,4 @@ public class MessageConsumer {
             kafkaConsumer.close();
         }
     }
-
 }

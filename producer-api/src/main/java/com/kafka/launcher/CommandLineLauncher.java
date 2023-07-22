@@ -115,7 +115,7 @@ public class CommandLineLauncher {
             System.out.println("Please Enter a Message to produce to Kafka:");
             String input = scanner.nextLine();
             logger.info("Entered message is {}", input);
-            if (input.equals("00")) {
+            if (input.equals("00")) { // Enter 00 to quit the Command Line Kafka Producer.
                 flag = false;
             } else {
                 MessageProducer messageProducer = init();

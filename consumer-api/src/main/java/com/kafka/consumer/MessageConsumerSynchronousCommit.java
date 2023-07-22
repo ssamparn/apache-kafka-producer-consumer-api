@@ -27,7 +27,7 @@ public class MessageConsumerSynchronousCommit {
     }
 
     public MessageConsumerSynchronousCommit(Map<String, Object> propsMap) {
-        kafkaConsumer = new KafkaConsumer<String, String>(propsMap);
+        kafkaConsumer = new KafkaConsumer<>(propsMap);
     }
 
     public static Map<String, Object> buildConsumerProperties() {

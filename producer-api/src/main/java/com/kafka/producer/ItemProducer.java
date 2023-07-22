@@ -21,7 +21,7 @@ public class ItemProducer {
     private KafkaProducer<Integer, Item> kafkaProducer;
 
     public ItemProducer(Map<String, Object> producerProps) {
-        kafkaProducer = new KafkaProducer<Integer, Item>(producerProps);
+        kafkaProducer = new KafkaProducer<>(producerProps);
     }
 
     public static void main(String[] args) {
@@ -46,9 +46,9 @@ public class ItemProducer {
 
     private void publishMessageSync(Item item) {
         ProducerRecord<Integer, Item> producerRecord = new ProducerRecord<>(topicName, item.getId(), item);
-        RecordMetadata recordMetadata = null;
+        RecordMetadata recordMetadata;
         try {
-            recordMetadata = (RecordMetadata) kafkaProducer.send(producerRecord).get();
+            recordMetadata = kafkaProducer.send(producerRecord).get();
             log.info("Published Record Offset is : {} and the partition is : {}", recordMetadata.offset(), recordMetadata.partition());
         } catch (InterruptedException | ExecutionException e) {
             log.error("Exception in publishMessageSync : {}", e.getMessage());

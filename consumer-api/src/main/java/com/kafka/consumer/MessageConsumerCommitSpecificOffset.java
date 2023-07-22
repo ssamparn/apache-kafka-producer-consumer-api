@@ -70,5 +70,4 @@ public class MessageConsumerCommitSpecificOffset {
         MessageConsumerCommitSpecificOffset messageConsumer = new MessageConsumerCommitSpecificOffset(buildConsumerProperties());
         messageConsumer.pollKafka();
     }
-
 }

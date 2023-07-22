@@ -21,7 +21,7 @@ public class ItemConsumer {
     private KafkaConsumer<Integer, Item> kafkaConsumer;
 
     public ItemConsumer(Map<String, Object> propsMap){
-        kafkaConsumer = new KafkaConsumer<Integer, Item>(propsMap);
+        kafkaConsumer = new KafkaConsumer<>(propsMap);
     }
 
     public static void main(String[] args) {
@@ -54,9 +54,7 @@ public class ItemConsumer {
         try{
             while(true) {
                 ConsumerRecords<Integer, Item> consumerRecords = kafkaConsumer.poll(timeOutDuration);
-                consumerRecords.forEach((record) -> {
-                    log.info("Consumed Record key is: {}  and the value is: {} and the partition is: {}", record.key(), record.value(), record.partition());
-                });
+                consumerRecords.forEach((record) -> log.info("Consumed Record key is: {}  and the value is: {} and the partition is: {}", record.key(), record.value(), record.partition()));
             }
         } catch (Exception e) {
             log.error("Exception in pollKafka : {}", e.getMessage());

@@ -22,7 +22,7 @@ public class MessageConsumerRebalanceListener {
     private String topicName = "test-topic";
 
     public MessageConsumerRebalanceListener(Map<String, Object> propsMap){
-        kafkaConsumer = new KafkaConsumer<String, String>(propsMap);
+        kafkaConsumer = new KafkaConsumer<>(propsMap);
     }
 
     public static Map<String, Object> buildConsumerProperties() {

@@ -1,7 +1,6 @@
 package com.kafka.consumer;
 
 import org.apache.kafka.clients.consumer.*;
-import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,11 +24,10 @@ public class MessageConsumerAsynchronousCommit {
     }
 
     public MessageConsumerAsynchronousCommit(Map<String, Object> propsMap) {
-        kafkaConsumer = new KafkaConsumer<String, String>(propsMap);
+        kafkaConsumer = new KafkaConsumer<>(propsMap);
     }
 
     public static Map<String, Object> buildConsumerProperties() {
-
         Map<String, Object> propsMap = new HashMap<>();
 
         propsMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -70,6 +68,4 @@ public class MessageConsumerAsynchronousCommit {
             kafkaConsumer.close();
         }
     }
-
-
 }

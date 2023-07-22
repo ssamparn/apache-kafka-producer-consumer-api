@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/consumer-api/apache-kafka-producer-consumer-api.consumer-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/consumer-api/apache-kafka-producer-consumer-api.consumer-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/producer-api/apache-kafka-producer-consumer-api.producer-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/producer-api/apache-kafka-producer-consumer-api.producer-api.main.iml" />
+    </modules>
+  </component>
+</project>
